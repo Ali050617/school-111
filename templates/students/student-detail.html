@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Student Detail {% endblock %}
+
+{% block content %}
+
+        <h1>O'quvchi ma'lumotlari</h1>
+        <div class="student-details">
+            <div class="student-info">
+                <!-- Static content for a students's details -->
+                <img src="student-image.jpg" alt="O'quvchi rasmi" id="studentImage" class="student-image">
+                <h2 id="first_name">{{ student.first_name }}</h2>
+                <p>ID: <span id="studentId">12345</span></p>
+                <p>Guruh: <span id="studentGroup">Guruh 1</span></p>
+                <p>Tug'ilgan sana: <span id="studentBirthDate">2006-04-15</span></p>
+                <p>Telefon: <span id="studentPhone">+998 90 123 45 67</span></p>
+                <p>Manzil: <span id="studentAddress">Tashkent, Yunusobod</span></p>
+            </div>
+            <div class="student-grades">
+                <h3>Baholar</h3>
+                <table id="gradesTable">
+                    <thead>
+                        <tr>
+                            <th>Fan</th>
+                            <th>Baho</th>
+                            <th>Sana</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Matematika</td>
+                            <td>4</td>
+                            <td>2024-05-01</td>
+                        </tr>
+                        <tr>
+                            <td>Fizika</td>
+                            <td>5</td>
+                            <td>2024-05-03</td>
+                        </tr>
+                        <tr>
+                            <td>Ingliz tili</td>
+                            <td>3</td>
+                            <td>2024-05-05</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="actions">
+            <a href="{{ student.get_update_url }}" class="btn"><i class="fas fa-edit"></i> Tahrirlash</a>
+            <button id="{{ student.get_delete_url }}" class="btn btn-danger"><i class="fas fa-trash"></i> O'chirish</button>
+        </div>
+
+{% endblock %}
+
